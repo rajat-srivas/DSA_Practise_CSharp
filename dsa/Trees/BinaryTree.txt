@@ -1,0 +1,77 @@
+﻿Hierarchiral Data structure
+root node
+leaf nodes => no children
+binary tree => each node can have at max two nodes
+
+parent
+left child
+right child
+sibling nodes
+ancestors of node are => parent => grandeparent =>>>> root node
+
+Level => each horizonal nodes belong to a level. Root node is level 1 or level 0
+Level and depth are same
+
+Subtree => left subtree, right subtree
+
+Build
+-ve values indicate => no child at that position represented by null below
+1 2 4 -1 -1 5 -1 -1 3 -1 6 -1 -1
+
+			   1
+		2			3
+				
+	4		5	null	6 
+
+null null null null	 null null
+
+
+Traversal
+
+PreOrder => starts with root
+ Root -> Leftsubtree -> RightSubtree
+for the above tree Preorder traversal = 1 2 4 5 3 6
+
+Inorder => root is in middle so called inorder
+Leftsubtree => root => rightsubtree
+4 2 5 1 3 6
+
+PostOrder => end with root
+Left subtree => right subtree => root
+4 5 2 6 3 1
+
+Level Order => line after each level
+1
+23
+456
+
+Use Queue
+1. Add root & null to queue
+2. Take item out from queue and add its children in queue along with null
+3. repeat step 2
+
+sample structure of queue if nothing taken out but all added for reference => 1 null 2 3 null 4 5 6 null
+
+null represent new line so when we get null print new line
+
+
+Count of nodes
+recursive => left subtree count + right subtree count + 1 (root)
+
+Height of tree
+Level of root to deepest leaf
+max(lefthright, right height) + 1(root)
+
+Diameter of tree
+number of noeds in the longest path between any two nodes
+2 cases
+with main root
+without main root
+
+Subtree of another tree
+
+	2								1
+3		4						2		5
+							3		4		6
+
+Compare root, if mathed match childrens, if not pass on to left subtree 

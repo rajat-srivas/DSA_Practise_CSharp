@@ -2,6 +2,7 @@
 using System.Text;
 using System.Text.RegularExpressions;
 using dsa.Graphs;
+using dsa.Trees;
 
 namespace dsa
 {
@@ -11,14 +12,37 @@ namespace dsa
 		static void Main(string[] args)
 		{
 			//TriggerGraphCalls();
-
-			//TopologicalSorting sorting = new TopologicalSorting();
-			//sorting.TopologicalSortOrder(6);
-
-			ShortestPath path = new ShortestPath();
-			path.Dijkstra(0, 6);
+			
+			//TriggerTreeCalls();
 
 			Console.ReadLine();
+
+		}
+
+		private static void TriggerTreeCalls()
+		{
+			BuildTree treeBuilder = new BuildTree();
+			Node tree = treeBuilder.TreeBuilder();
+
+			treeBuilder.TraverseTree(tree);
+
+			TreeProblems prob = new TreeProblems();
+
+			Console.WriteLine("Count of Nodes in tree");
+			int count = prob.CountOfNodes(tree);
+			Console.WriteLine(count + Environment.NewLine);
+
+			Console.WriteLine("Sum of Nodes in tree");
+			int sum = prob.SumOfNodes(tree);
+			Console.WriteLine(sum + Environment.NewLine);
+
+			Console.WriteLine("Height of Nodes in tree");
+			int height = prob.HeightOfTree(tree);
+			Console.WriteLine(height + Environment.NewLine);
+
+			Console.WriteLine("Sum of nodes at Kth Level");
+			int sumLevel = prob.SumOfNodesAtKthLevel(tree, 2);
+			Console.WriteLine(sumLevel + Environment.NewLine);
 
 		}
 
@@ -49,11 +73,18 @@ namespace dsa
 			string path = "0";
 			graph.PathToTarget(visited, 0, path, 5);
 
+			TopologicalSorting sorting = new TopologicalSorting();
+			sorting.TopologicalSortOrder(6);
+
+			ShortestPath shortestPath = new ShortestPath();
+			shortestPath.Dijkstra(0, 6);
+
+
 		}
 
 
 
-	
+
 
 	}
 }
