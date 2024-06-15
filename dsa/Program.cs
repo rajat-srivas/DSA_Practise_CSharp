@@ -10,7 +10,14 @@ namespace dsa
 
 		static void Main(string[] args)
 		{
-			TriggerGraphCalls();
+			//TriggerGraphCalls();
+
+			//TopologicalSorting sorting = new TopologicalSorting();
+			//sorting.TopologicalSortOrder(6);
+
+			ShortestPath path = new ShortestPath();
+			path.Dijkstra(0, 6);
+
 			Console.ReadLine();
 
 		}

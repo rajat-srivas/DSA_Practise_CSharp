@@ -52,15 +52,65 @@ namespace dsa.Graphs
 			graph[6].Add(new Edge(6, 5));
 
 		}
+    
+        public void CreateGraphForTopology()
+        {
+			graph = new List<Edge>[vertex];
 
+			for (int i = 0; i < graph.Length; i++)
+			{
+				graph[i] = new List<Edge>();
+			}
+
+			graph[5].Add(new Edge(5, 0));
+			graph[5].Add(new Edge(5, 2));
+
+			graph[2].Add(new Edge(2, 3));
+
+			graph[3].Add(new Edge(3, 1));
+
+			graph[4].Add(new Edge(4, 1));
+			graph[4].Add(new Edge(4, 0));
+
+		}
+
+		public void CreateGraphForDijkstra()
+		{
+			graph = new List<Edge>[vertex];
+
+			for (int i = 0; i < graph.Length; i++)
+			{
+				graph[i] = new List<Edge>();
+			}
+
+			graph[0].Add(new Edge(0, 1,2));
+			graph[0].Add(new Edge(0,2,4));
+
+			graph[1].Add(new Edge(1, 2,1));
+			graph[1].Add(new Edge(1, 3, 7));
+
+			graph[2].Add(new Edge(2, 4, 3));
+
+			graph[3].Add(new Edge(3, 5, 1));
+
+			graph[4].Add(new Edge(4, 3, 2));
+
+			graph[4].Add(new Edge(4, 5, 5));
+
+		}
 		public int GetNeighboursCount(int node)
         {
             return graph[node].Count;
         }
 
-        public List<int> GetNeighbours(int node)
+        public List<int> GetNeighbourNodes(int node)
         {
             return graph[node].ToList().Select(x => x.Destination).ToList();
+        }
+
+        public List<Edge> GetNeighbours(int node)
+        {
+            return graph[node].ToList();
         }
 
 		/// <summary>
@@ -90,7 +140,7 @@ namespace dsa.Graphs
 				{
 					Console.Write(currentItem + " ");
 					visited[currentItem] = true;
-                    var immediateNeighbours = GetNeighbours(currentItem);
+                    var immediateNeighbours = GetNeighbourNodes(currentItem);
                     immediateNeighbours.ForEach(x =>
                     {
                         traveral.Enqueue(x);
@@ -112,7 +162,7 @@ namespace dsa.Graphs
             Console.Write(startPoint + " ");
             visited[startPoint] = true;
 
-            var neighbours = GetNeighbours(startPoint);
+            var neighbours = GetNeighbourNodes(startPoint);
             neighbours.ForEach(x =>
             {
                 if (!visited[x])
@@ -135,7 +185,7 @@ namespace dsa.Graphs
                 {
                     Console.Write(currentItem + " ");
                     visited[currentItem] = true;
-					var immediateNeighbours = GetNeighbours(currentItem);
+					var immediateNeighbours = GetNeighbourNodes(currentItem);
 					immediateNeighbours.ForEach(x =>
 					{
                         if (!visited[x])
@@ -153,7 +203,7 @@ namespace dsa.Graphs
                 return;
             }
 
-            var neighebours = GetNeighbours(startPoint);
+            var neighebours = GetNeighbourNodes(startPoint);
             neighebours.ForEach(x =>
             {
                 if (!visited[x])
@@ -180,7 +230,7 @@ namespace dsa.Graphs
 
         public int Destination { get; set; }
 
-        public int? Weight { get; set; }
+        public int Weight { get; set; }
     }
 
 }
