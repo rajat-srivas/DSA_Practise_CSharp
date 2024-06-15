@@ -1,0 +1,104 @@
+﻿using System.IO.Compression;
+using System.Text;
+using System.Text.RegularExpressions;
+using dsa.Graphs;
+
+namespace dsa
+{
+    internal class Program
+	{
+
+		static void Main(string[] args)
+		{
+			TriggerGraphCalls();
+			Console.ReadLine();
+
+		}
+
+		public static void TriggerGraphCalls()
+		{
+			Graph graph = new Graph(7);
+			graph.CreateGraph();
+			var list = graph.GetNeighbours(2);
+
+			Console.WriteLine("Breadth First Traversal");
+			graph.BFS(0);
+
+			Console.WriteLine(Environment.NewLine);
+
+			bool[] visited = new bool[7];
+			Console.WriteLine("Depth First Traversal - Recurssive");
+			graph.DFS_Recurssive(0, visited);
+
+			Console.WriteLine(Environment.NewLine);
+
+			Console.WriteLine("Depth First Traversal - Stack");
+			graph.DFS_Stack(0);
+
+			Console.WriteLine(Environment.NewLine);
+
+			Console.WriteLine("Path from 0 => 5" + Environment.NewLine);
+			visited = new bool[7];
+			string path = "0";
+			graph.PathToTarget(visited, 0, path, 5);
+
+		}
+
+
+
+	
+
+	}
+}
+
+#region
+
+//var date = new DateTime(2020, 07, 02,0,0,0);
+//Console.WriteLine(date);
+
+//bool leapYear = date.Year % 4 == 0;
+//int totalSeconds = leapYear ? 366 * 24 * 60 * 60 : 355 * 24 * 60 * 60;
+
+//var minutesGoneTillYesterday = date - new DateTime(date.Year, 1, 1, 0, 0, 0);
+//var todaySeconds = (date.Hour * 60 * 60) + (date.Minute * 60) + date.Second;
+
+//var totalSecondsGone = (minutesGoneTillYesterday.TotalSeconds) + todaySeconds;
+
+//double percent = (totalSecondsGone / totalSeconds) * 100;
+//Console.WriteLine("Percentage of year completed " + percent.ToString("0.000"));
+
+//DateTime daysOver = 
+
+//Console.WriteLine("Choose the problem to execute");
+//Console.WriteLine("Select 1 for Three Sum");
+//Console.WriteLine("Select 2 for Move Zero's to End");
+//Console.WriteLine("Select 3 for Mountain Array");
+
+
+//string choice = Console.ReadLine();
+
+//switch (choice)
+//{
+//	case "1":
+//		Three_Sum_Problem three = new Three_Sum_Problem();
+//		var result = three.ThreeSumProblem(new List<int>() { -1, 9, 2, 3, 6, 4 }, 10);
+//		Console.WriteLine(result);
+//		break;
+//	case "2":
+//		Move_Zeros_To_End move = new Move_Zeros_To_End();
+//		var zeros = move.MoveZeroToEnd(new int[] { 0, 1, 0, 3, 12 });
+//                 foreach (var item in zeros)
+//                 {
+//			Console.Write(item + " ,");
+//		}
+//		break;
+//	case "3":
+//		Mountain_Array mountain = new Mountain_Array();
+//		var isMountain = mountain.ValidMountainArray();
+//		Console.WriteLine(isMountain);
+//		break;
+//             default:
+//		Console.WriteLine("Choose current option to continue");
+//		break;
+//}
+#endregion
