@@ -11,15 +11,20 @@ namespace dsa
 
 		static void Main(string[] args)
 		{
-			//TriggerGraphCalls();
-			
-			//TriggerTreeCalls();
-
+			//Graph();
+			//BinaryTree();
+			//CalculateYearPercentage();
+			//MultipleProblems();
 			Console.ReadLine();
 
 		}
 
-		private static void TriggerTreeCalls()
+		public static void BinarySearchTree()
+		{
+
+		}
+
+		private static void BinaryTree()
 		{
 			BuildTree treeBuilder = new BuildTree();
 			Node tree = treeBuilder.TreeBuilder();
@@ -45,8 +50,7 @@ namespace dsa
 			Console.WriteLine(sumLevel + Environment.NewLine);
 
 		}
-
-		public static void TriggerGraphCalls()
+		public static void Graph()
 		{
 			Graph graph = new Graph(7);
 			graph.CreateGraph();
@@ -82,8 +86,57 @@ namespace dsa
 
 		}
 
+		public static void CalculateYearPercentage()
+		{
+			var date = new DateTime(2020, 07, 02, 0, 0, 0);
+			Console.WriteLine(date);
 
+			bool leapYear = date.Year % 4 == 0;
+			int totalSeconds = leapYear ? 366 * 24 * 60 * 60 : 355 * 24 * 60 * 60;
 
+			var minutesGoneTillYesterday = date - new DateTime(date.Year, 1, 1, 0, 0, 0);
+			var todaySeconds = (date.Hour * 60 * 60) + (date.Minute * 60) + date.Second;
+
+			var totalSecondsGone = (minutesGoneTillYesterday.TotalSeconds) + todaySeconds;
+
+			double percent = (totalSecondsGone / totalSeconds) * 100;
+			Console.WriteLine("Percentage of year completed " + percent.ToString("0.000"));
+		}
+		public static void MultipleProblems()
+		{
+
+			Console.WriteLine("Choose the problem to execute");
+			Console.WriteLine("Select 1 for Three Sum");
+			Console.WriteLine("Select 2 for Move Zero's to End");
+			Console.WriteLine("Select 3 for Mountain Array");
+
+			string choice = Console.ReadLine();
+
+			switch (choice)
+			{
+				case "1":
+					Three_Sum_Problem three = new Three_Sum_Problem();
+					var result = three.ThreeSumProblem(new List<int>() { -1, 9, 2, 3, 6, 4 }, 10);
+					Console.WriteLine(result);
+					break;
+				case "2":
+					Move_Zeros_To_End move = new Move_Zeros_To_End();
+					var zeros = move.MoveZeroToEnd(new int[] { 0, 1, 0, 3, 12 });
+					foreach (var item in zeros)
+					{
+						Console.Write(item + " ,");
+					}
+					break;
+				case "3":
+					Mountain_Array mountain = new Mountain_Array();
+					var isMountain = mountain.ValidMountainArray();
+					Console.WriteLine(isMountain);
+					break;
+				default:
+					Console.WriteLine("Choose current option to continue");
+					break;
+			}
+		}
 
 
 	}
@@ -91,52 +144,6 @@ namespace dsa
 
 #region
 
-//var date = new DateTime(2020, 07, 02,0,0,0);
-//Console.WriteLine(date);
-
-//bool leapYear = date.Year % 4 == 0;
-//int totalSeconds = leapYear ? 366 * 24 * 60 * 60 : 355 * 24 * 60 * 60;
-
-//var minutesGoneTillYesterday = date - new DateTime(date.Year, 1, 1, 0, 0, 0);
-//var todaySeconds = (date.Hour * 60 * 60) + (date.Minute * 60) + date.Second;
-
-//var totalSecondsGone = (minutesGoneTillYesterday.TotalSeconds) + todaySeconds;
-
-//double percent = (totalSecondsGone / totalSeconds) * 100;
-//Console.WriteLine("Percentage of year completed " + percent.ToString("0.000"));
-
-//DateTime daysOver = 
-
-//Console.WriteLine("Choose the problem to execute");
-//Console.WriteLine("Select 1 for Three Sum");
-//Console.WriteLine("Select 2 for Move Zero's to End");
-//Console.WriteLine("Select 3 for Mountain Array");
 
 
-//string choice = Console.ReadLine();
-
-//switch (choice)
-//{
-//	case "1":
-//		Three_Sum_Problem three = new Three_Sum_Problem();
-//		var result = three.ThreeSumProblem(new List<int>() { -1, 9, 2, 3, 6, 4 }, 10);
-//		Console.WriteLine(result);
-//		break;
-//	case "2":
-//		Move_Zeros_To_End move = new Move_Zeros_To_End();
-//		var zeros = move.MoveZeroToEnd(new int[] { 0, 1, 0, 3, 12 });
-//                 foreach (var item in zeros)
-//                 {
-//			Console.Write(item + " ,");
-//		}
-//		break;
-//	case "3":
-//		Mountain_Array mountain = new Mountain_Array();
-//		var isMountain = mountain.ValidMountainArray();
-//		Console.WriteLine(isMountain);
-//		break;
-//             default:
-//		Console.WriteLine("Choose current option to continue");
-//		break;
-//}
 #endregion
