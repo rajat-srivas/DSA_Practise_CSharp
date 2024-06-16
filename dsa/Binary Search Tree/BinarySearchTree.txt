@@ -1,1 +1,23 @@
-﻿
+﻿Is a Binary Tree => i.e max 2 children of each node
+Special Properties 
+Left subtree nodes < root node
+Right subtrr nodes > root node
+Left & right subtree are also BST and have no duplicates
+
+Inorder traversal of BST returns a sorted sequence
+
+Search => BST are used to make search more efficient
+Search is similar to Binary Search of array
+So we first compare with root, if search term is less then we search in left subtree else right subtree because of the special property of the BST
+
+In worst case search snereio the time complexity = O(height of tree) as we look for item per level
+
+Skewed trees=tree with nodes only on one side i.e either no left nodes or no right nodes 
+
+Important => Delete a node BST 
+Three case 
+	Node to delete is
+		No Child => delete a node and return null to parent
+		One Child => delete node and replace node with child node
+		Two Child => replace with inorder successor and delete the node for inorder successor => inorder successor can have max 0 or 1 children
+now to find inordersuccessor => go to right subtree and find left most node

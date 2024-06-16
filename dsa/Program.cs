@@ -1,6 +1,7 @@
 ﻿using System.IO.Compression;
 using System.Text;
 using System.Text.RegularExpressions;
+using dsa.Binary_Search_Tree;
 using dsa.Graphs;
 using dsa.Trees;
 
@@ -15,12 +16,31 @@ namespace dsa
 			//BinaryTree();
 			//CalculateYearPercentage();
 			//MultipleProblems();
+
+
+			BST();
+
 			Console.ReadLine();
 
 		}
 
-		public static void BinarySearchTree()
+		public static void BST()
 		{
+			BinarySearchTree bst = new BinarySearchTree();
+			
+			Node bstNode = bst.BSTBuilder();
+			bst.InOrderTraversal(bstNode);
+
+			//bool result = BinarySearchTree.SearchBST(bstNode, 19);
+			//Console.WriteLine(result);
+
+			//Console.WriteLine("Deleting Node");
+			//bst.DeleteNode(bstNode, 5);
+			//bst.InOrderTraversal(bstNode);
+
+			//bst.PrintInRage(5, 15, bstNode);
+
+			bst.RootToLeafPath(bstNode, new List<int>());
 
 		}
 
