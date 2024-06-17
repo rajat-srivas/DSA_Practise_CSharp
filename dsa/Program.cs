@@ -12,13 +12,16 @@ namespace dsa
 
 		static void Main(string[] args)
 		{
+			Kadane_MaxSumInSubArray kadane = new Kadane_MaxSumInSubArray();
+			kadane.CalculateMaxSumInSubArray(new int[] { -2, 1, -3, 4, -1, 2, 1, -5, 4 });
+
 			//Graph();
 			//BinaryTree();
 			//CalculateYearPercentage();
 			//MultipleProblems();
 
 
-			BST();
+			//BST();
 
 			Console.ReadLine();
 
