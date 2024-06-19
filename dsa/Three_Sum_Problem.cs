@@ -28,11 +28,11 @@ namespace dsa
 					}
 					else if (currentSum < expectedSum)
 					{
-						left += 1;
+						leftIndex += 1;
 					}
 					else
 					{
-						right -= 1;
+						rightIndex -= 1;
 					}
 				}
 			}
