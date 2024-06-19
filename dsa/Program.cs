@@ -12,8 +12,14 @@ namespace dsa
 
 		static void Main(string[] args)
 		{
-			Kadane_MaxSumInSubArray kadane = new Kadane_MaxSumInSubArray();
-			kadane.CalculateMaxSumInSubArray(new int[] { -2, 1, -3, 4, -1, 2, 1, -5, 4 });
+			Longest_Palindrome_Substring longest = new Longest_Palindrome_Substring();
+			string input ="forgeeksskeegfor";
+			int length = longest.LongestPalindrome(input);
+
+			Console.WriteLine("Longest Plaindrome in " + input + " : " + length );
+
+			//Kadane_MaxSumInSubArray kadane = new Kadane_MaxSumInSubArray();
+			//kadane.CalculateMaxSumInSubArray(new int[] { -2, 1, -3, 4, -1, 2, 1, -5, 4 });
 
 			//Graph();
 			//BinaryTree();
