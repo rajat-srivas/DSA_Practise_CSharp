@@ -11,8 +11,8 @@ namespace dsa.Trees
 		public static int index = -1;
 		public Node treeRoot;
 		public BuildTree()
-		{ 
-			
+		{
+
 		}
 
 		public Node TreeBuilder()
@@ -42,15 +42,23 @@ namespace dsa.Trees
 			traverse.LevelOrderTraversal(tree);
 			Console.WriteLine(Environment.NewLine);
 
-			
+
 		}
 
 		public static Node Build(int[] nodeValue)
 		{
+
 			index++;
+
+			if (index >= nodeValue.Length)
+			{
+				return null;
+			}
+
 			if (nodeValue[index] == -1)
 				return null;
 
+			
 			Node newNode = new Node(nodeValue[index]);
 			newNode.Left = Build(nodeValue);
 			newNode.Right = Build(nodeValue);

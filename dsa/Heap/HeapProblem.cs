@@ -1,6 +1,9 @@
-﻿using System;
+﻿using dsa.Trees;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design.Serialization;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -71,6 +74,83 @@ namespace dsa.Heap
 
 			Console.WriteLine(Environment.NewLine + k + " smallest number: ");
 			Console.Write(pq.Peek());
+		}
+
+		//this has some issues need to worked upon
+		public void IsBTHeap()
+		{
+
+			Node node = BuildTree.Build(new int[] { 10, 20, 30, 40, 60, -1, -1 });
+			//two things 
+			//check the index logic i.e left and right child specify the formula
+			//for max heap
+			//check if child is less than parent
+
+			int index = 0;
+			int count = countNodes(node);
+
+			if(isCBT(node, index, count) && isMaxHeap(node))
+			{
+				Console.WriteLine("Node form a Max Heap");
+			}
+			else
+			{
+				Console.WriteLine("Not a max heap");
+			}
+		}
+
+		private bool isMaxHeap(Node? node)
+		{
+			if (node == null)
+				return true;
+
+			if (node.Left == null && node.Right == null)
+				return true;
+
+			if(node.Right == null)
+			{
+				//only left child
+				return node.Left.data < node.data;
+			}
+			else
+			{
+				//both child
+
+				bool isMax = node.data > node.Left.data && node.data > node.Right.data;
+
+				bool left = isMaxHeap(node.Left);
+				bool right = isMaxHeap(node.Right);
+
+				return left && right && isMax;
+			}
+		}
+
+		private bool isCBT(Node? node, int index, int count)
+		{
+			if (node == null)
+				return true;
+
+            if (index >= count)
+            {
+				return false;
+            }
+			else
+			{
+				bool left = isCBT(node.Left, 2 * index + 1, count);
+				bool right = isCBT(node.Right, 2 * index + 2, count);
+
+				return left && right;
+			}
+			
+        }
+
+		private int countNodes(Node? node)
+		{
+			if (node == null)
+				return 0;
+
+			int answer = 1 + countNodes(node.Left) + countNodes(node.Right);
+			return answer; 
 		}
 	}
 

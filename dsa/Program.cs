@@ -17,13 +17,17 @@ namespace dsa
 			//HeapBuilder heap = new HeapBuilder();
 			//heap.Heap(arr);
 
-			HeapProblem prob	= new HeapProblem();
-			prob.KthElement();
+			//HeapProblem prob	= new HeapProblem();
+			//prob.KthElement();
+			//prob.IsBTHeap();
+
+			MergeKSortedArray merge = new MergeKSortedArray();
+			merge.Merge();
 
 			//LongestSubsequence sub =new LongestSubsequence();
 			//sub.LongestCommonSubsequence("abcde", "ace");
 
-		//	Backspace_String_Compare backspace = new Backspace_String_Compare();
+			//	Backspace_String_Compare backspace = new Backspace_String_Compare();
 			//bool isEqual = backspace.BackspaceCompare("a#c", "b");
 
 			//
@@ -33,7 +37,7 @@ namespace dsa
 
 			//Kadane_MaxSumInSubArray kadane = new Kadane_MaxSumInSubArray();
 			//kadane.CalculateMaxSumInSubArray(new int[] { -2, 1, -3, 4, -1, 2, 1, -5, 4 });
-			
+
 			//Longest_Palindrome_Substring longest = new Longest_Palindrome_Substring();
 			//string input ="forgeeksskeegfor";
 			//int length = longest.LongestPalindrome(input);
