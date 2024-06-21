@@ -70,6 +70,11 @@ namespace dsa
 		{
 			CustomLinkedList ll = new CustomLinkedList();
 			ll.BuildLinkedList();
+
+			ll.DeleteNthNodeFromEnd(9);
+
+			//ReverseLinkedList reverse = new ReverseLinkedList();
+			//reverse.Reverse();
 		}
 		public static void BST()
 		{
