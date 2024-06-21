@@ -3,6 +3,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using dsa.Binary_Search_Tree;
 using dsa.Graphs;
+using dsa.Heap;
 using dsa.Trees;
 
 namespace dsa
@@ -12,14 +13,22 @@ namespace dsa
 
 		static void Main(string[] args)
 		{
+			//int[] arr = { 9, 6, 8, 2, 10, 3, 4, 7, 1, 5 };
+			//HeapBuilder heap = new HeapBuilder();
+			//heap.Heap(arr);
+
+			HeapProblem prob	= new HeapProblem();
+			prob.KthElement();
 
 			//LongestSubsequence sub =new LongestSubsequence();
 			//sub.LongestCommonSubsequence("abcde", "ace");
 
-			Backspace_String_Compare backspace = new Backspace_String_Compare();
-			bool isEqual = backspace.BackspaceCompare("a#c", "b");
+		//	Backspace_String_Compare backspace = new Backspace_String_Compare();
+			//bool isEqual = backspace.BackspaceCompare("a#c", "b");
 
-			Console.WriteLine(isEqual);
+			//
+			//
+			//Console.WriteLine(isEqual);
 
 
 			//Kadane_MaxSumInSubArray kadane = new Kadane_MaxSumInSubArray();
