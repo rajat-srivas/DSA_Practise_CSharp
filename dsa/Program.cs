@@ -4,6 +4,7 @@ using System.Text.RegularExpressions;
 using dsa.Binary_Search_Tree;
 using dsa.Graphs;
 using dsa.Heap;
+using dsa.LinkedList;
 using dsa.Trees;
 
 namespace dsa
@@ -13,6 +14,9 @@ namespace dsa
 
 		static void Main(string[] args)
 		{
+
+			LinkedList();
+
 			//int[] arr = { 9, 6, 8, 2, 10, 3, 4, 7, 1, 5 };
 			//HeapBuilder heap = new HeapBuilder();
 			//heap.Heap(arr);
@@ -21,8 +25,8 @@ namespace dsa
 			//prob.KthElement();
 			//prob.IsBTHeap();
 
-			MergeKSortedArray merge = new MergeKSortedArray();
-			merge.Merge();
+			//MergeKSortedArray merge = new MergeKSortedArray();
+			//merge.Merge();
 
 			//LongestSubsequence sub =new LongestSubsequence();
 			//sub.LongestCommonSubsequence("abcde", "ace");
@@ -62,6 +66,11 @@ namespace dsa
 
 		}
 
+		public static void LinkedList()
+		{
+			CustomLinkedList ll = new CustomLinkedList();
+			ll.BuildLinkedList();
+		}
 		public static void BST()
 		{
 			BinarySearchTree bst = new BinarySearchTree();
