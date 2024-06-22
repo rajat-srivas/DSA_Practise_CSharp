@@ -2,6 +2,7 @@
 using System.Text;
 using System.Text.RegularExpressions;
 using dsa.Binary_Search_Tree;
+using dsa.Binary_Trees;
 using dsa.Graphs;
 using dsa.Heap;
 using dsa.LinkedList;
@@ -15,7 +16,12 @@ namespace dsa
 		static void Main(string[] args)
 		{
 
-			LinkedList();
+			LeftRightViewTree tree = new LeftRightViewTree();
+			tree.ViewGenerator();
+
+			//WaterGarden water = new WaterGarden();
+			//water.MinimumTapesToWaterGarden();
+			//LinkedList();
 
 			//int[] arr = { 9, 6, 8, 2, 10, 3, 4, 7, 1, 5 };
 			//HeapBuilder heap = new HeapBuilder();
