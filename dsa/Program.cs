@@ -73,8 +73,11 @@ namespace dsa
 
 			//ll.DeleteNthNodeFromEnd(9);
 
-			PalindromeLinkedList palindrome = new PalindromeLinkedList();
-			palindrome.Palindrome();
+			//PalindromeLinkedList palindrome = new PalindromeLinkedList();
+			//palindrome.Palindrome();
+
+			CyclicLinkedList cycle = new CyclicLinkedList();
+			cycle.HasCycle();
 
 			//ReverseLinkedList reverse = new ReverseLinkedList();
 			//reverse.Reverse();

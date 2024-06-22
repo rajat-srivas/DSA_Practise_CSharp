@@ -31,9 +31,6 @@ namespace dsa.LinkedList
 
 			CheckPalindrome(list);
 
-			
-
-
 		}
 
 		private void CheckPalindrome(CustomLinkedList list)
