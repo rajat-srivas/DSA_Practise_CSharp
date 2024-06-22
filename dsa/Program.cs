@@ -69,9 +69,12 @@ namespace dsa
 		public static void LinkedList()
 		{
 			CustomLinkedList ll = new CustomLinkedList();
-			ll.BuildLinkedList();
+			//ll.BuildLinkedList();
 
-			ll.DeleteNthNodeFromEnd(9);
+			//ll.DeleteNthNodeFromEnd(9);
+
+			PalindromeLinkedList palindrome = new PalindromeLinkedList();
+			palindrome.CheckPalindrome();
 
 			//ReverseLinkedList reverse = new ReverseLinkedList();
 			//reverse.Reverse();
