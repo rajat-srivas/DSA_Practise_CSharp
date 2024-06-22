@@ -11,24 +11,36 @@ namespace dsa.LinkedList
 	public class PalindromeLinkedList
 	{
 		//1 - 2 - 3- 2 - 1 - null
-		public void CheckPalindrome()
+		public void Palindrome()
 		{
 			CustomLinkedList list = new CustomLinkedList();
 			list.AddFirst("1");
 			list.AddLast("2");
 			list.AddLast("3");
 			list.AddLast("4");
-			list.AddLast("5");
+			list.AddLast("3");
 			list.AddLast("2");
 			list.AddLast("1");
 
 			Console.WriteLine("Current List");
 			list.PrintLL();
 
+			list.headNode = RecurssiveReverse(list.headNode);
+			Console.WriteLine("Reverse the linkedlist using Recurrsive method");
+			list.PrintLL();
 
+			CheckPalindrome(list);
+
+			
+
+
+		}
+
+		private void CheckPalindrome(CustomLinkedList list)
+		{
 			//step 1
 			//Middle using Two-Pointer Technique (Tortoise and Hare Algorithm)
-		
+
 			LLNode middleNode = FindMiddle(list);
 			Console.WriteLine(Environment.NewLine + "Middle Node of List: " + middleNode.Data);
 
@@ -39,9 +51,9 @@ namespace dsa.LinkedList
 			//step 3
 			//Compare first and secondHalf
 			var startHead = list.headNode;
-			while(reversedHead != null) 
+			while (reversedHead != null)
 			{
-				if(startHead.Data != reversedHead.Data)
+				if (startHead.Data != reversedHead.Data)
 				{
 					Console.WriteLine("Not Palindrome");
 					return;
@@ -52,7 +64,6 @@ namespace dsa.LinkedList
 			}
 
 			Console.WriteLine("Palindrome");
-
 		}
 
 		//reverse the node from the next node of middle
@@ -78,6 +89,29 @@ namespace dsa.LinkedList
 
 			reverseHead.Next = null;
 			return prev;
+		}
+
+		private LLNode RecurssiveReverse(LLNode headNode)
+		{
+			// Base case: if headNode is null or only one node, return it
+			if (headNode == null || headNode.Next == null)
+			{
+				return headNode;
+			}
+
+			// Recursive case: reverse the rest of the list
+			var newHead = RecurssiveReverse(headNode.Next);
+
+			// Set the next node's next pointer to point back to current node
+			// i.e the next node should point back to me
+			headNode.Next.Next = headNode;
+
+			// Set current node's next pointer to null
+			// delete the current mapping from right - left as in above we made left - right
+			headNode.Next = null;
+
+			return newHead;
+
 		}
 
 		//Initialize both slow and fast pointers to the head of the linked list.

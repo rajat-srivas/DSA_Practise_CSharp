@@ -74,7 +74,7 @@ namespace dsa
 			//ll.DeleteNthNodeFromEnd(9);
 
 			PalindromeLinkedList palindrome = new PalindromeLinkedList();
-			palindrome.CheckPalindrome();
+			palindrome.Palindrome();
 
 			//ReverseLinkedList reverse = new ReverseLinkedList();
 			//reverse.Reverse();
