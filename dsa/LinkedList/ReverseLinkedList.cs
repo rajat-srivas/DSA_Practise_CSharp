@@ -13,13 +13,13 @@ namespace dsa.LinkedList
 		{
 			//LinkedList<int> list = new LinkedList<int>();
 			CustomLinkedList list = new CustomLinkedList();
-			list.AddFirst("1");
-			list.AddLast("2");
-			list.AddLast("3");
-			list.AddLast("4");
-			list.AddLast("5");
-			list.AddLast("6");
-			list.AddLast("7");
+			//list.AddFirst("1");
+			//list.AddLast("2");
+			//list.AddLast("3");
+			//list.AddLast("4");
+			//list.AddLast("5");
+			//list.AddLast("6");
+			//list.AddLast("7");
 
 			Console.WriteLine("Current List");
 			list.PrintLL();

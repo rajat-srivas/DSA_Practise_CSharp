@@ -19,17 +19,17 @@ namespace dsa.LinkedList
 
 		public void BuildLinkedList()
 		{
-			AddFirst("1");
-			AddLast("2");
-			AddLast("3");
-			AddLast("4");
-			AddLast("5");
-			AddLast("6");
-			AddLast("7");
-			AddLast("8");
-			AddLast("9");
+			AddFirst(1);
+			AddLast(8);
+			AddLast(9);
+			//AddLast(1);
+			//AddLast("5");
+			//AddLast("6");
+			//AddLast("7");
+			//AddLast("8");
+			//AddLast("9");
 
-			GetSize();
+			//GetSize();
 
 			PrintLL();
 
@@ -64,7 +64,7 @@ namespace dsa.LinkedList
 			Console.Write("NULL");
 			Console.WriteLine();
 		}
-		public void AddFirst(string data)
+		public void AddFirst(int data)
 		{
 			Size++;
 			var newNode = new LLNode(data);
@@ -77,7 +77,7 @@ namespace dsa.LinkedList
 			newNode.Next = headNode;
 			headNode = newNode;
 		}
-		public void AddLast(string data)
+		public void AddLast(int data)
 		{
 			Size++;
 			var lastNode = new LLNode(data);
@@ -170,19 +170,6 @@ namespace dsa.LinkedList
 			//Console.WriteLine(current.Data);
 		}
 
-	}
-
-	public class LLNode
-	{
-		public string Data { get; set; }
-
-		public LLNode Next { get; set; }
-
-		public LLNode(string d)
-		{
-			Data = d;
-			Next = null;
-		}
 	}
 
 	public class BuiltInLL()

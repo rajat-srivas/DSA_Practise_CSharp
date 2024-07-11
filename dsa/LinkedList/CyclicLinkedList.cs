@@ -81,13 +81,13 @@ namespace dsa.LinkedList
 				return null;
 			}
 
-			LLNode head = new LLNode(values[0].ToString());
+			LLNode head = new LLNode(values[0]);
 			var current = head;
 			LLNode cycleNode = null;
 
 			for (int i = 1; i < values.Length; i++)
 			{
-				current.Next = new LLNode(values[i].ToString());
+				current.Next = new LLNode(values[i]);
 				current = current.Next;
 				if (i == pos)
 				{

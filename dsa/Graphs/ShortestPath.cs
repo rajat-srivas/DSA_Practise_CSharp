@@ -25,7 +25,7 @@ namespace dsa.Graphs
             priorityQueue.Enqueue(new Pair(source,0)); // distance to itself is 0
 
             int[] minDistance = new int[vertex];
-            for(int i =0;i<vertex; i++)
+            for(int i =0;i<vertex; i++) 
             {
                 if (i != source)
                 {
@@ -38,6 +38,7 @@ namespace dsa.Graphs
             while(priorityQueue.Count() > 0)
             {
                 Pair current = priorityQueue.Dequeue();// removes the item with least distance
+                Console.WriteLine("Dequeud " + current.Node + " " + current.Weight);
                 if (!visisted[current.Node])
                 {
                     visisted[current.Node] = true;
@@ -47,11 +48,14 @@ namespace dsa.Graphs
                         int u = n.Source;
                         int v = n.Destination;
 
+                       
                         //relaxation method to update distance
                         if (minDistance[u] + n.Weight < minDistance[v]) 
                         {
-                            minDistance[v] = minDistance[u] + n.Weight;
-                            priorityQueue.Enqueue(new Pair(v, minDistance[v]));
+							Console.WriteLine(u + " " + v + " " + n.Weight);
+							minDistance[v] = minDistance[u] + n.Weight;
+							Console.WriteLine(minDistance[v]);
+							priorityQueue.Enqueue(new Pair(v, minDistance[v]));
                         }
                         
                     });

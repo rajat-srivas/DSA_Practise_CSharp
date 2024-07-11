@@ -16,8 +16,17 @@ namespace dsa
 		static void Main(string[] args)
 		{
 
-			LeftRightViewTree tree = new LeftRightViewTree();
-			tree.ViewGenerator();
+			//EvenOddList eol = new EvenOddList();
+			//eol.OddEvenList();
+
+			//Max_Twin_Sum twin = new Max_Twin_Sum();
+			//twin.GetMaxSum();
+
+			Double_LL doublell = new Double_LL();
+			doublell.GetDouble();
+
+			//LeftRightViewTree tree = new LeftRightViewTree();
+			//tree.ViewGenerator();
 
 			//WaterGarden water = new WaterGarden();
 			//water.MinimumTapesToWaterGarden();
@@ -138,7 +147,7 @@ namespace dsa
 		{
 			Graph graph = new Graph(7);
 			graph.CreateGraph();
-			var list = graph.GetNeighbours(2);
+			//var list = graph.GetNeighbours(2);
 
 			Console.WriteLine("Breadth First Traversal");
 			graph.BFS(0);
@@ -156,13 +165,13 @@ namespace dsa
 
 			Console.WriteLine(Environment.NewLine);
 
-			Console.WriteLine("Path from 0 => 5" + Environment.NewLine);
-			visited = new bool[7];
-			string path = "0";
-			graph.PathToTarget(visited, 0, path, 5);
+			//Console.WriteLine("Path from 0 => 5" + Environment.NewLine);
+			//visited = new bool[7];
+			//string path = "0";
+			//graph.PathToTarget(visited, 0, path, 5);
 
-			TopologicalSorting sorting = new TopologicalSorting();
-			sorting.TopologicalSortOrder(6);
+			//TopologicalSorting sorting = new TopologicalSorting();
+			//sorting.TopologicalSortOrder(6);
 
 			ShortestPath shortestPath = new ShortestPath();
 			shortestPath.Dijkstra(0, 6);

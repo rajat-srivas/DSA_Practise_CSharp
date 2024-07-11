@@ -14,13 +14,13 @@ namespace dsa.LinkedList
 		public void Palindrome()
 		{
 			CustomLinkedList list = new CustomLinkedList();
-			list.AddFirst("1");
-			list.AddLast("2");
-			list.AddLast("3");
-			list.AddLast("4");
-			list.AddLast("3");
-			list.AddLast("2");
-			list.AddLast("1");
+			//list.AddFirst("1");
+			//list.AddLast("2");
+			//list.AddLast("3");
+			//list.AddLast("4");
+			//list.AddLast("3");
+			//list.AddLast("2");
+			//list.AddLast("1");
 
 			Console.WriteLine("Current List");
 			list.PrintLL();
