@@ -1,4 +1,5 @@
 ﻿using System.IO.Compression;
+using System.Linq.Expressions;
 using System.Text;
 using System.Text.RegularExpressions;
 using dsa.Binary_Search_Tree;
@@ -15,6 +16,20 @@ namespace dsa
 
 		static void Main(string[] args)
 		{
+			//Reverse_Substring_Between_Paranthesis rev = new Reverse_Substring_Between_Paranthesis();
+			//rev.ReverseString();
+
+			//RemoveDuplicatesSortedArray rem = new RemoveDuplicatesSortedArray();
+			//rem.RemoveDup();
+
+			FirstOccurrenceInString first =new FirstOccurrenceInString();
+			first.FirstIndex();
+
+			//Longest_SubSeq_Without_Repetition lon = new Longest_SubSeq_Without_Repetition();
+			//lon.Longest();
+
+			//Add_Two_LL ll = new Add_Two_LL();
+			//ll.SumLinkedList();
 
 			//EvenOddList eol = new EvenOddList();
 			//eol.OddEvenList();
@@ -22,8 +37,8 @@ namespace dsa
 			//Max_Twin_Sum twin = new Max_Twin_Sum();
 			//twin.GetMaxSum();
 
-			Double_LL doublell = new Double_LL();
-			doublell.GetDouble();
+			//Double_LL doublell = new Double_LL();
+			//doublell.GetDouble();
 
 			//LeftRightViewTree tree = new LeftRightViewTree();
 			//tree.ViewGenerator();
