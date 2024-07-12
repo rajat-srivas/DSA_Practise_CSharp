@@ -7,6 +7,7 @@ using dsa.Binary_Trees;
 using dsa.Graphs;
 using dsa.Heap;
 using dsa.LinkedList;
+using dsa.Sorting;
 using dsa.Trees;
 
 namespace dsa
@@ -22,8 +23,12 @@ namespace dsa
 			//RemoveDuplicatesSortedArray rem = new RemoveDuplicatesSortedArray();
 			//rem.RemoveDup();
 
-			FirstOccurrenceInString first =new FirstOccurrenceInString();
-			first.FirstIndex();
+			//Heap();
+
+			SortArray sorting = new SortArray();
+			sorting.Sorting();
+			//FirstOccurrenceInString first =new FirstOccurrenceInString();
+			//first.FirstIndex();
 
 			//Longest_SubSeq_Without_Repetition lon = new Longest_SubSeq_Without_Repetition();
 			//lon.Longest();
@@ -47,16 +52,7 @@ namespace dsa
 			//water.MinimumTapesToWaterGarden();
 			//LinkedList();
 
-			//int[] arr = { 9, 6, 8, 2, 10, 3, 4, 7, 1, 5 };
-			//HeapBuilder heap = new HeapBuilder();
-			//heap.Heap(arr);
-
-			//HeapProblem prob	= new HeapProblem();
-			//prob.KthElement();
-			//prob.IsBTHeap();
-
-			//MergeKSortedArray merge = new MergeKSortedArray();
-			//merge.Merge();
+		
 
 			//LongestSubsequence sub =new LongestSubsequence();
 			//sub.LongestCommonSubsequence("abcde", "ace");
@@ -94,6 +90,20 @@ namespace dsa
 
 			Console.ReadLine();
 
+		}
+
+		public static void Heap()
+		{
+			int[] arr = { 9, 6, 8, 2, 10, 3, 4, 7, 1, 5 };
+			HeapBuilder heap = new HeapBuilder();
+			heap.Heap(arr);
+
+			HeapProblem prob = new HeapProblem();
+			prob.KthElement();
+			prob.IsBTHeap();
+
+			MergeKSortedArray merge = new MergeKSortedArray();
+			merge.Merge();
 		}
 
 		public static void LinkedList()
